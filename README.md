@@ -17,6 +17,7 @@
 ## 项目目录
 
 ```bash
+.
 |--common，资源文件js,css...
 |   |--actions redux的指令与事件的触发对应，返回各种对象
 |   |--components UI组件
