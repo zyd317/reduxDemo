@@ -9,14 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjs/redux.git"
+    "url": "git@github.com:zyd317/reduxPractice.git"
   },
   "author": "yidi.zhao",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/reactjs/redux/issues"
-  },
-  "homepage": "http://redux.js.org",
+  "homepage": "http://localhost:3002/",
   "dependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.0",
