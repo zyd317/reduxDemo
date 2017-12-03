@@ -11,8 +11,8 @@
 1. npm install
 2. npm start，使用node来启动服务，node默认端口是3000
 
-3,webpack 压缩资源，生产build
-2,webpack-dev-server -w 需要host里面有localhost
+3. webpack 压缩资源，生产build
+2. webpack-dev-server -w 需要host里面有localhost
 
 ## 项目目录
 
