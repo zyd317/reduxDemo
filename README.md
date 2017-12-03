@@ -1,19 +1,21 @@
 ## redux的例子
 
 ## 功能
-1，显示点击次数，初始为一个随机数
-2，点击如果是偶数就增加
-3，点击异步增加
-4，点击乘以N
+
+1. 显示点击次数，初始为一个随机数
+2. 点击如果是偶数就增加
+3. 点击异步增加
+4. 点击乘以N
 
 ## 启动
-1，npm install
-2，npm start，使用node来启动服务，node默认端口是3000
+1. npm install
+2. npm start，使用node来启动服务，node默认端口是3000
 
 3,webpack 压缩资源，生产build
 2,webpack-dev-server -w 需要host里面有localhost
 
 ## 项目目录
+
 ```bash
 |--common，资源文件js,css...
 |   |--actions redux的指令与事件的触发对应，返回各种对象
@@ -41,15 +43,15 @@
 ```
 
 ## webpack
-0,vendor.js需要在功能js之前引入，因为人家是库嘛。
-1,注意webpack配置: dev环境下不要
+0. vendor.js需要在功能js之前引入，因为人家是库嘛。
+1. 注意webpack配置: dev环境下不要
 **new uglifyJsPlugin({ compress: { warnings: false } })**
 否则会warning，dev环境下不要压缩代码
 根据webpack-dev-server --env dev表示是开发环境
 **new webpack.DefinePlugin({"process.env": {NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development")}})  设置参数环境**
-2，注意几个loaders配置的是否正确，用来"解压"scss,jsx等。当然也需要安装这些modules
-3，include表示loaders只在这个目录下生效，exclude表示loaders只在这个目录下不生效
-4，**从服务器端发送的页面需要写publicPath，用来设置网站资源的跟路径是什么**
+2. 注意几个loaders配置的是否正确，用来"解压"scss,jsx等。当然也需要安装这些modules
+3. include表示loaders只在这个目录下生效，exclude表示loaders只在这个目录下不生效
+4. **从服务器端发送的页面需要写publicPath，用来设置网站资源的跟路径是什么**
 
 
 ## node作为服务器
