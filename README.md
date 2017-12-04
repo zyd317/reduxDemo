@@ -17,7 +17,7 @@
 
 ## 项目目录
 
-```bash
+````bash
 reduxPractice
 |
 ├── common // 资源文件js,css...
@@ -43,7 +43,7 @@ reduxPractice
 ├── webpack.config.js // beta环境的webpack配置
 │
 └── webpack.config.production.js // 线上环境的webpack配置
-```
+````
 
 ## webpack
 
