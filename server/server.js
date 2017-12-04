@@ -39,7 +39,7 @@ const renderFullPage = (html, preLoadedState) => {
         <!doctype html>
         <html>
             <head>
-                <title>lalllll</title>
+                <title>reduxDemo</title>
             </head>
             <body>
                 <div id="app">${html}</div>

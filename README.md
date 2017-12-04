@@ -54,7 +54,18 @@
 3. include表示loaders只在这个目录下生效，exclude表示loaders只在这个目录下不生效
 4. **从服务器端发送的页面需要写publicPath，用来设置网站资源的跟路径是什么**
 
+## webpack作为打包工具
+- 见webpack配置文件
 
 ## node作为服务器
-## webpack作为打包工具
+- configureStore(preLoadedState);设置store的初始状态; store.getState()获取store的初始状态
+- webpackDevMiddleware，webpackHotMiddleware 中间件设置webpack模块热更新
+- app.use(callback(req, res))
+- res.send将页面发送到服务器
+
 ## redux作为UI组件的事件管理
+- 页面需要 <Provider store={store}><App/></Provider> Provider包裹，并传入store设置store的初始状态
+- configureStore,store的配置文件，const store = createStore(rootReducer, preLoadedState)传入reducer的入口和state的初始值，并返回一个store对象
+- reducer 引入每个reducer,并且const rootReducer = combineReducers({ counter: counterReducer});
+- containers/App connect(mapStateToProps, mapDispatchToProps)(Counter)
+- mapStateToProps(return store({})) 传入的是一个store对象
