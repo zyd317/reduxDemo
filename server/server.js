@@ -12,9 +12,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../webpack.config.js'
 
 import React from 'react'
-
 import configureStore from '../common/store/configureStore'
-import { fetchCounter } from '../common/api/counter'
 
 const app = new Express();
 const port = 3002;
@@ -25,42 +23,40 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig
 app.use(webpackHotMiddleware(compiler));
 
 const handleRender = (req, res) => {
-  fetchCounter(apiResult => {
     const params = qs.parse(req.query);
-    const counter = parseInt(params.counter, 10) || apiResult || 0;
+    const counter = parseInt(params.counter, 10) || 0;
     const preLoadedState = { counter };
-    const store = configureStore(preLoadedState);
-    const finalState = store.getState(); // 获得页面展示时store的状态，store.getState()可以获取当前状态
+    const store = configureStore(preLoadedState);// 设置store的初始状态{counter: 0}
+    const finalState = store.getState(); // store.getState()获得页面展示时store的状态，{counter: 0}
     res.send(renderFullPage("服务器已经把代码发送过来啦。。。", finalState));
-  });
 };
 
 app.use(handleRender);
 
 // 渲染页面
 const renderFullPage = (html, preLoadedState) => {
-  return `
-    <!doctype html>
-    <html>
-      <head>
-        <title>lalllll</title>
-      </head>
-      <body>
-        <div id="app">${html}</div>
-        <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(/</g, '\\x3c')}
-        </script>
-        <script src="/static/vendor.js"></script>
-        <script src="/static/bundle.js"></script>
-      </body>
-    </html>
+    return `
+        <!doctype html>
+        <html>
+            <head>
+                <title>lalllll</title>
+            </head>
+            <body>
+                <div id="app">${html}</div>
+                <script>
+                    window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState)}
+                </script>
+                <script src="/static/vendor.js"></script>
+                <script src="/static/bundle.js"></script>
+            </body>å
+        </html>
     `
 };
 
 app.listen(port, (error) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
-  }
-});
+    if (error) {
+        console.error(error);
+    } else {
+        console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
+    }å
+});å
