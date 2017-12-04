@@ -48,7 +48,7 @@ const renderFullPage = (html, preLoadedState) => {
                 </script>
                 <script src="/static/vendor.js"></script>
                 <script src="/static/bundle.js"></script>
-            </body>å
+            </body>
         </html>
     `
 };
@@ -58,5 +58,5 @@ app.listen(port, (error) => {
         console.error(error);
     } else {
         console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
-    }å
-});å
+    }
+});

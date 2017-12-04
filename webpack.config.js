@@ -7,7 +7,7 @@ let webpack = require('webpack'),
 
 module.exports = {
     entry: {
-        app: './client/index.js',
+        app: './index.js',
         vendor: [ "react", "react-dom", "react-redux", "redux" ]
     },
     output: {
