@@ -1,7 +1,6 @@
 /**
  * 服务器端运行
- * configureStore
- * Provider
+ * send html
  */
 
 import Express from 'express'
@@ -10,7 +9,7 @@ import qs from 'qs'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackConfig from '../webpack.config'
+import webpackConfig from '../webpack.config.js'
 
 import React from 'react'
 
