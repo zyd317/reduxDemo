@@ -20,7 +20,7 @@
 ````bash
 reduxPractice
 |
-├── common // 资源文件js,css...
+├-- common // 资源文件js,css...
 |   ├── actions // redux的指令与事件的触发对应，返回各种对象
 |   ├── components // UI组件
 |   ├── containers // 外层组件，每一个单独可运行的组件，具有dispach事件的能力
@@ -30,19 +30,19 @@ reduxPractice
 |   ├── scripts 
 |   └── styles
 |
-├── build // webpack编译之后的文件夹
+├-- build // webpack编译之后的文件夹
 |   ├── vendor.js // 变动很少的，需要单独压缩的文件，一般是各种库文件
 |   └── bundle.js // 变动很多的，压缩文件，一般是业务代码
 |
-├── server
+├-- server
 |    ├── index.js
 |    └── server.js // 服务器端代码，node。构建页面dom，引入react等必要的库
 |
-├── index.js // 入口引入client/index
+├-- index.js // 入口引入client/index
 |
-├── webpack.config.js // beta环境的webpack配置
+├-- webpack.config.js // beta环境的webpack配置
 │
-└── webpack.config.production.js // 线上环境的webpack配置
+└-- webpack.config.production.js // 线上环境的webpack配置
 ````
 
 ## webpack
