@@ -87,4 +87,4 @@
 ##todos
 
 - [x] 添加redux
-- [] 添加router
+- [ ] 添加router
