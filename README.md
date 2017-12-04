@@ -18,31 +18,41 @@
 ## 项目目录
 
 ````bash
-reduxPractice
-│
-├── common // 资源文件js,css...
-│   │── actions // redux的指令与事件的触发对应，返回各种对象
-│   │── components // UI组件
-│   │── containers // 外层组件，每一个单独可运行的组件，具有dispach事件的能力
-│   ├── reducer // 处理事件switch case
-│   ├── store // store的配置文件，reducer
-│   ├── constants // 一些redux事件名称常量
-│   ├── scripts 
-│   └── styles
-│
-├── build // webpack编译之后的文件夹
-│   ├── vendor.js // 变动很少的，需要单独压缩的文件，一般是各种库文件
-│   └── bundle.js // 变动很多的，压缩文件，一般是业务代码
-│
-├── server
-│    ├── index.js
-│    └── server.js // 服务器端代码，node。构建页面dom，引入react等必要的库
-│
+.
+├── LICENSE
+├── README.md
+├── build
+│   ├── bundle.js // 变动很多的，压缩文件，一般是业务代码
+│   └── vendor.js   // 变动很少的，需要单独压缩的文件，一般是各种库文件
+├── client
+│   └── index.js
+├── common  // 资源文件js,css...
+│   ├── actions  // redux的指令与事件的触发对应，返回各种对象
+│   ├── components  // UI组件,调用action
+│   │   ├── Counter
+│   │   ├── Reverse
+│   │   └── index.js
+│   ├── constants  // 一些redux事件名称常量
+│   ├── containers // 外层组件，每一个单独可运行的组件，具有dispach事件的能力
+│   │   ├── App
+│   │   ├── Reverse
+│   │   └── index.js
+│   ├── reducers // 处理事件switch case,操作每个props的state
+│   │   ├── counter.js // 不同的reducer
+│   │   ├── index.js
+│   │   └── reverse.js
+│   ├── store  // store的配置文件，reducer
+│   │   └── configureStore.js
+│   ├── scripts // 公共函数
+│   └── styles // 公共样式
 ├── index.js // 入口引入client/index
-│
-├── webpack.config.js // beta环境的webpack配置
-│
-└── webpack.config.production.js // 线上环境的webpack配置
+├── package-lock.json // 版本锁
+├── package.json
+├── server
+│   ├── index.js
+│   └── server.js  // 服务器端代码，node。构建页面dom
+├── webpack.config.js   // beta环境的webpack配置
+└── webpack.config.production.js   // 线上环境的webpack配置
 ````
 
 ## webpack
