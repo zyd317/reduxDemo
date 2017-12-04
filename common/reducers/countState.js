@@ -4,12 +4,14 @@
  */
 import { REVERSE } from '../constants/countState'
 
-const counterReducer = (state = {}, action) => {
+const countState = (state = {}, action) => {
     switch (action.type) {
         case REVERSE:
-            return document.getElementById("text").value.split("").reverse().join("");
+            // return document.getElementById("text").value.split("").reverse().join("");
+            return action.value.split("").reverse().join("");
+            break;
         default:
-            return state + "----2";
+            return state;
     }
 };
-export default counterReducer
+export default countState
