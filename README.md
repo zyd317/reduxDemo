@@ -95,7 +95,7 @@
     * components中使用this.props.actionName调用action
     * this.props.reducerName获取reducer的state（这个state是reducer里面的switch-case返回的值）
 
-##todos
+## todos
 
 - [x] 添加redux
 - [ ] 添加router
