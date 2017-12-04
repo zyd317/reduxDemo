@@ -7,3 +7,8 @@ export const reverse = (value) => ({
     type: Types.REVERSE,
     value: value
 });
+
+export const getInput = (value) => ({
+    type: Types.GETINPUT,
+    value: value
+});

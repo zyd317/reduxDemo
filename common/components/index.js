@@ -4,4 +4,4 @@
 import Counter from "./Counter/Counter";
 import Reverse from "./Reverse/Reverse";
 
-export {Counter, Reverse};
+export { Counter, Reverse };
