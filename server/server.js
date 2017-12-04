@@ -17,10 +17,6 @@ import React from 'react'
 import configureStore from '../common/store/configureStore'
 import { fetchCounter } from '../common/api/counter'
 
-import { renderToString } from 'react-dom/server'
-import { Provider } from 'react-redux'
-import App from '../common/containers/App'
-
 const app = new Express();
 const port = 3002;
 
@@ -33,15 +29,8 @@ const handleRender = (req, res) => {
   fetchCounter(apiResult => {
     const params = qs.parse(req.query);
     const counter = parseInt(params.counter, 10) || apiResult || 0;
-    const preloadedState = { counter };
-    const store = configureStore(preloadedState);
-
-    // // 使用react返回的dom
-    // const html = renderToString(
-    //   <Provider store={store}>
-    //     <App />
-    //   </Provider>
-    // );
+    const preLoadedState = { counter };
+    const store = configureStore(preLoadedState);
     const finalState = store.getState(); // 获得页面展示时store的状态，store.getState()可以获取当前状态
     res.send(renderFullPage("服务器已经把代码发送过来啦。。。", finalState));
   });
@@ -50,7 +39,7 @@ const handleRender = (req, res) => {
 app.use(handleRender);
 
 // 渲染页面
-const renderFullPage = (html, preloadedState) => {
+const renderFullPage = (html, preLoadedState) => {
   return `
     <!doctype html>
     <html>
@@ -60,7 +49,7 @@ const renderFullPage = (html, preloadedState) => {
       <body>
         <div id="app">${html}</div>
         <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState).replace(/</g, '\\x3c')}
         </script>
         <script src="/static/vendor.js"></script>
         <script src="/static/bundle.js"></script>
@@ -69,7 +58,6 @@ const renderFullPage = (html, preloadedState) => {
     `
 };
 
-// 日志
 app.listen(port, (error) => {
   if (error) {
     console.error(error);

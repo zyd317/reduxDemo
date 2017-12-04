@@ -7,13 +7,8 @@ let webpack = require('webpack'),
 
 module.exports = {
     entry: {
-        app: ['./client/index.js']
-        ,vendor: [
-            "react",
-            "react-dom",
-            "react-redux",
-            "redux"
-        ]
+        app: './client/index.js',
+        vendor: [ "react", "react-dom", "react-redux", "redux" ]
     },
     output: {
         path: path.join(__dirname, 'build'),
@@ -21,8 +16,8 @@ module.exports = {
         publicPath: '/static/'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }) // 块文件。webpack版本不同的话语法不一样
+        new webpack.HotModuleReplacementPlugin(), // 模块热更新
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
     ],
     module: {
         loaders:[
