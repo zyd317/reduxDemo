@@ -72,6 +72,7 @@
 - ref: this.refs.refId
 - components setState
 - props: this.props.reducerName,reducer更新state之后
+- input等输入框加入value之后，输入被禁用。再绑定一个onchange事件来手动修改输入内容。
 
 
 ## redux作为UI组件的事件管理
@@ -81,6 +82,7 @@
 - reducer 引入每个reducer,并且const rootReducer = combineReducers({ counter: counterReducer});
 - containers/App connect(mapStateToProps, mapDispatchToProps)(Counter)
 - mapStateToProps(return store({})) 传入的是一个store对象
+- reducer可以返回一个对象，components中使用this.props.actionName调用action,this.props.reducerName获取reducer的state（这个state是reducer里面的switch-case返回的值）
 
 ##todos
 
