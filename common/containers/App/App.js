@@ -15,10 +15,10 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Counter } from '../../components/index'
-import * as CounterActions from '../../actions/counter1'
+import * as CounterActions from '../../actions/counter'
 const mapStateToProps = (state) => {
     return {
-        counter1: state.counter
+        counterState: state.counter
     }
 };
 const mapDispatchToProps = (dispatch) => {

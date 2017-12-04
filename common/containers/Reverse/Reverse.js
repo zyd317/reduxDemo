@@ -4,13 +4,13 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Reverse } from '../../components/index';
-import * as countState from '../../actions/countState'
+import * as reverse from '../../actions/reverse'
 const mapStateToProps = (state) => {
     return {
-        countState: state.countState
+        reverseState: state.reverse
     }
 };
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(countState, dispatch)
+    return bindActionCreators(reverse, dispatch)
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Reverse)

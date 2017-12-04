@@ -15,7 +15,7 @@ class Reverse extends Component {
     render(){
         return (
             <p>
-                我是另外一个store, 我的值是: {this.props.countState}
+                我是另外一个store, 我的值是: {this.props.reverseState}
                 <input id="text" ref="test"/>
                 <button onClick={() => this.props.reverse(this.refs.test.value)}> reverse </button>
             </p>

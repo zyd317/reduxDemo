@@ -3,9 +3,9 @@
  * 另外一个reducer
  * action.value 传入value
  */
-import { REVERSE } from '../constants/countState'
+import { REVERSE } from '../constants/reverse'
 
-const countState = (state = {}, action) => {
+const reverse = (state = {}, action) => {
     switch (action.type) {
         case REVERSE:
             // return document.getElementById("text").value.split("").reverse().join("");
@@ -14,4 +14,4 @@ const countState = (state = {}, action) => {
             return state;
     }
 };
-export default countState
+export default reverse;

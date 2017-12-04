@@ -4,9 +4,9 @@
  * 这些方法会在外层components里面给他传入
  */
 import React from 'react'
-const Counter = ({counter1, increment, decrement, incrementIfOdd, incrementAsync, multiply}) => (
+const Counter = ({counterState, increment, decrement, incrementIfOdd, incrementAsync, multiply}) => (
   <p>
-    点击了: {counter1} 次
+    点击了: {counterState} 次
     <button onClick={increment}>+</button>
     <button onClick={decrement}>-</button>
     <button onClick={incrementIfOdd}>如果是偶数就增加</button>

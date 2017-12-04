@@ -4,11 +4,11 @@
  */
 import { combineReducers } from 'redux'
 import counterReducer from './counter'
-import countState from './countState'
+import reverseReducer from './reverse'
 
 const rootReducer = combineReducers({
     counter: counterReducer,
-    countState: countState
+    reverse: reverseReducer
 });
 
 export default rootReducer
