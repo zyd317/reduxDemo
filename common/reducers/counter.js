@@ -16,8 +16,8 @@ const counterReducer = (state = {}, action) => {
       return state + 1;
     case DECREMENT_COUNTER:
       return state - 1;
-      case MULTIPLY_COUNTER:
-          return state * action.value;
+    case MULTIPLY_COUNTER:
+      return state * action.value;
     default:
       return state
   }
