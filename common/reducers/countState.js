@@ -7,7 +7,7 @@ import { REVERSE } from '../constants/countState'
 const counterReducer = (state = {}, action) => {
     switch (action.type) {
         case REVERSE:
-            return state + "----1";
+            return document.getElementById("text").value.split("").reverse().join("");
         default:
             return state + "----2";
     }

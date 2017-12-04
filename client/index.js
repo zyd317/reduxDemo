@@ -3,8 +3,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from '../common/store/configureStore'
-import {App, Reverse } from "../common/containers";
-const store = configureStore(window.__PRELOADED_STATE__); // 设置store的初始值
+import { App, Reverse } from "../common/containers";
+const store = configureStore({counter: 10, countState: "countState"}); // 设置store的初始值
 render (
     <Provider store={store}>
         <div>

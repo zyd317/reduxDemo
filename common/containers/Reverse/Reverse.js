@@ -3,8 +3,8 @@
  */
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Reverse } from '../components';
-import * as countState from '../actions/countState'
+import { Reverse } from '../../components/index';
+import * as countState from '../../actions/countState'
 const mapStateToProps = (state) => {
     return {
         countState: state.countState
