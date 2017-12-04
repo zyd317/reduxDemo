@@ -4,7 +4,7 @@
  * 这些方法会在外层components里面给他传入
  */
 import React from 'react'
-const Counter = ({increment, incrementIfOdd, incrementAsync, decrement, counter1, multiply}) => (
+const Counter = ({counter1, increment, decrement, incrementIfOdd, incrementAsync, multiply}) => (
   <p>
     点击了: {counter1} 次
     <button onClick={increment}>+</button>
