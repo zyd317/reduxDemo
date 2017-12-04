@@ -7,13 +7,15 @@
  *
  * default的必须要return state; 默认值，
  * 因为所有的state都在一个store里面，dispatch的时候会遍历所有的reducer，不符合的都会走到default里面
+ *
+ * return 得到一个新的state
  */
 import { INCREMENT_COUNTER, DECREMENT_COUNTER, MULTIPLY_COUNTER } from '../constants/counter'
 
 const counterReducer = (state = {}, action) => {
   switch (action.type) {
     case INCREMENT_COUNTER:
-      return state + 1;
+      return state + 1; // 得到一个新的state
     case DECREMENT_COUNTER:
       return state - 1;
     case MULTIPLY_COUNTER:
