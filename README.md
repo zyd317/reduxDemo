@@ -67,6 +67,13 @@
 - app.use(callback(req, res))
 - res.send将页面发送到服务器
 
+## react
+
+- ref: this.refs.refId
+- components setState
+- props: this.props.reducerName,reducer更新state之后
+
+
 ## redux作为UI组件的事件管理
 
 - 页面需要 <Provider store={store}><App/></Provider> Provider包裹，并传入store设置store的初始状态
