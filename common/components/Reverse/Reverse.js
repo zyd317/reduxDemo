@@ -16,7 +16,8 @@ class Reverse extends Component {
         this.state = {}
     }
 
-    // // 修改input的内容,也可以使用下面的{reverseText: reverseText; inputText: inputText}
+    // 修改input的内容,也可以使用下面的{reverseText: reverseText; inputText: inputText}
+    // component 重新渲染时调用
     // componentWillReceiveProps(nextProps){
     //     this.refs.test.value = nextProps.reverseState;
     // }
