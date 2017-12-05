@@ -4,20 +4,21 @@
  */
 let webpack = require('webpack'),
     path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: './index.js',
-        vendor: [ "react", "react-dom", "react-redux", "redux" ]
+        reset: './common/styles/release/index.js',
+        app: './index.js'
     },
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         publicPath: '/static/'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(), // 模块热更新
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
+        new ExtractTextPlugin("styles.css")
     ],
     module: {
         rules:[
@@ -29,8 +30,14 @@ module.exports = {
                 }]
             },
             {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
+            },
+            {
                 test: /\.[s]?css$/,
-                // include: path.resolve(__dirname, "common/styles"),
                 use: [{
                     loader: 'style-loader'
                 },{

@@ -53,8 +53,8 @@ const renderFullPage = (html, preLoadedState) => {
                             Math.round(document.documentElement.clientWidth / 375 * 100) + 'px';
                     })();
                 </script>
-                <script src="/static/vendor.js"></script>
-                <script src="/static/bundle.js"></script>
+                <script src="/static/reset.bundle.js"></script>
+                <script src="/static/app.bundle.js"></script>
             </body>
         </html>
     `
