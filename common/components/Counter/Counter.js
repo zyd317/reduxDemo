@@ -6,14 +6,15 @@
 import React from 'react'
 
 import "./index.scss";
+let multiplyNumber = 3;
 const Counter = ({counterState, increment, decrement, incrementIfOdd, incrementAsync, multiply}) => (
   <p>
-    点击了: {counterState} 次
+    已经点击了: {counterState} 次
     <button className="btn-default" onClick={increment}>+</button>
     <button className="btn-default" onClick={decrement}>-</button>
     <button className="btn-default" onClick={incrementIfOdd}>如果是奇数就增加</button>
     <button className="btn-default" onClick={() => incrementAsync()}>异步增加</button>
-    <button className="btn-default" onClick={() => multiply(3)}>乘以n</button>
+    <button className="btn-default" onClick={() => multiply(multiplyNumber)}>乘以{multiplyNumber}</button>
   </p>
 );
 export default Counter
