@@ -41,6 +41,7 @@ const renderFullPage = (html, preLoadedState) => {
             <head>
                 <title>reduxDemo</title>
                 <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+                <script src="/static/style.bundle.js"></script>
             </head>
             <body>
                 <div id="app">${html}</div>
@@ -53,7 +54,6 @@ const renderFullPage = (html, preLoadedState) => {
                             Math.round(document.documentElement.clientWidth / 375 * 100) + 'px';
                     })();
                 </script>
-                <script src="/static/reset.bundle.js"></script>
                 <script src="/static/app.bundle.js"></script>
             </body>
         </html>
