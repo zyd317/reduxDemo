@@ -98,5 +98,6 @@
 ## todos
 
 - [x] 增加scss支持,loaders
+- [x] 自动增加css前缀，minx/loaders自动添加
 - [x] 添加redux
 - [ ] 添加router

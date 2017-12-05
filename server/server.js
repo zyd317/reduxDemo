@@ -40,11 +40,18 @@ const renderFullPage = (html, preLoadedState) => {
         <html>
             <head>
                 <title>reduxDemo</title>
+                <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
             </head>
             <body>
                 <div id="app">${html}</div>
                 <script>
                     window.__PRELOADED_STATE__ = ${JSON.stringify(preLoadedState)}
+                </script>
+                <script>
+                    (function() {
+                        document.documentElement.style.fontSize = 
+                            Math.round(document.documentElement.clientWidth / 375 * 100) + 'px';
+                    })();
                 </script>
                 <script src="/static/vendor.js"></script>
                 <script src="/static/bundle.js"></script>
