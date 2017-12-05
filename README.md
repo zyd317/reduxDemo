@@ -82,6 +82,30 @@
 - components setState
 - props: this.props.reducerName,reducer更新state之后
 - input等输入框加入value之后，输入被禁用。再绑定一个onchange事件来手动修改输入内容。
+- 生命周期
+    * **componentWillMout()** 组件挂载之前，render之前。
+    使用setState不会导致页面重绘
+    * **componentDidMount()** 组件挂载之后。
+    适应：
+        * 需要初始化 DOM 节点的操作
+        * AJAX 请求
+    * **componentWillReceiveProps(nextProps)** 已挂载组件接收到新的 props 之前。
+    即使props没变也会调用，所以如果你想要真正处理 Props 的变化，需要比较当前 this.props 和nextProps(函数防抖动？？)。
+    适用：
+        * 更新 state的值（比如重置,必须这里的Reverse里面设置input里面的值）
+        * 比较 this.props 和 nextProps
+    * **shouldComponentUpdate(nextProps, nextState)** 当组件接收到新的 Props 或者 state时，
+    要进行 rendering之前会调用,告诉 React 组件是否需要重新渲染,默认返回 true.
+    * **componentWillUpdate()** ,state or props 更新后re-render之前调用。不能在这里调用 setState。
+    * **componentDidUpdate()**，在组件更新之后马上调用。
+    适用：
+        * 操作 DOM
+        * 发起网络请求
+    * **componentWillUnmount()**，在组件卸载和销毁前调用。不能在这里调用 setState。
+    适用：
+        * 取消定时器
+        * 取消网络请求
+        * 解绑 DOM 事件
 
 
 ## redux作为UI组件的事件管理
