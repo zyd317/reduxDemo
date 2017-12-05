@@ -23,14 +23,14 @@ class Reverse extends Component {
 
     render(){
         return (
-            <p className="m-reverse">
+            <div className="m-reverse">
                 我是另外一个store, reverse下面input框里面的值是：
                     <div className="reverse-result">{this.props.reverseState.reverseText}</div>
                 <input className="input-default" id="text" ref="test" onChange={(e)=>{
                     this.props.getInput(e.target.value);
                 }} value={this.props.reverseState.inputText}/>
                 <button className="btn-default" onClick={() => this.props.reverse(this.refs.test.value)}> reverse </button>
-            </p>
+            </div>
         );
     }
 }
