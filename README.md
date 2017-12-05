@@ -97,5 +97,6 @@
 
 ## todos
 
+- [x] 增加scss支持,loaders
 - [x] 添加redux
 - [ ] 添加router
