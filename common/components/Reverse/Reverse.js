@@ -8,6 +8,7 @@
  * *因此，this.props.action/state可以调用action,也可以获取该组件的state*
  */
 import React, {Component} from "react";
+import './index.scss';
 
 class Reverse extends Component {
     constructor(props){

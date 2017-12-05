@@ -20,16 +20,24 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
     ],
     module: {
-        loaders:[
+        rules:[
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader?presets[]=es2015&presets[]=react'
+                use: [{
+                    loader: "babel-loader?presets[]=es2015&presets[]=react"
+                }]
             },
             {
-                test: /\.css$/,
-                include: path.resolve(__dirname, "common/styles"),
-                loader: 'style-loader!css-loader?modules'
+                test: /\.[s]?css$/,
+                // include: path.resolve(__dirname, "common/styles"),
+                use: [{
+                    loader: 'style-loader'
+                },{
+                    loader: 'css-loader'
+                },{
+                    loader: 'sass-loader'
+                }]
             }
         ]
     }
