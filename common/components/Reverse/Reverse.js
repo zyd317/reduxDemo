@@ -25,10 +25,10 @@ class Reverse extends Component {
         return (
             <p>
                 我是另外一个store, 我的值是: {this.props.reverseState.reverseText}
-                <input id="text" ref="test" onChange={(e)=>{
+                <input className="input-default" id="text" ref="test" onChange={(e)=>{
                     this.props.getInput(e.target.value);
                 }} value={this.props.reverseState.inputText}/>
-                <button onClick={() => this.props.reverse(this.refs.test.value)}> reverse </button>
+                <button className="btn-default" onClick={() => this.props.reverse(this.refs.test.value)}> reverse </button>
             </p>
         );
     }

@@ -1,0 +1,37 @@
+.btn-primary,
+.btn-default {
+    background: #3598dc;
+    border: 0.01rem solid #3598dc;
+    color: #f6f8fa;
+    padding: 0 0.15rem;
+    margin: 0 .04rem;
+    display: inline-block;
+    outline: 0;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    min-width: 0.4rem;
+    text-align: center;
+    font-size: 0.14rem;
+    border-radius: 0.04rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .9;  
+        filter:alpha(opacity=0);  
+    }
+}
+
+.btn-default {
+    background: #fff;
+    border: 0.01rem solid #ccc;
+    color: #666;
+}
+
+.input-default {
+    border: 0.01rem solid #ccc;
+    color: #666;
+    padding: .1rem .1rem;
+    border-radius: .04rem;
+    display: inline-block;
+    margin: 0 .04rem;
+}

@@ -4,14 +4,16 @@
  * 这些方法会在外层components里面给他传入
  */
 import React from 'react'
+
+import "./index.scss";
 const Counter = ({counterState, increment, decrement, incrementIfOdd, incrementAsync, multiply}) => (
   <p>
     点击了: {counterState} 次
-    <button onClick={increment}>+</button>
-    <button onClick={decrement}>-</button>
-    <button onClick={incrementIfOdd}>如果是偶数就增加</button>
-    <button onClick={() => incrementAsync()}>异步增加</button>
-    <button onClick={() => multiply(3)}>乘以n</button>
+    <button className="btn-default" onClick={increment}>+</button>
+    <button className="btn-default" onClick={decrement}>-</button>
+    <button className="btn-default" onClick={incrementIfOdd}>如果是偶数就增加</button>
+    <button className="btn-default" onClick={() => incrementAsync()}>异步增加</button>
+    <button className="btn-default" onClick={() => multiply(3)}>乘以n</button>
   </p>
 );
 export default Counter

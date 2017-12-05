@@ -1,0 +1,119 @@
+// 定义变换
+@mixin transform($transform){
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+            transform: $transform;
+}
+
+// 定义变换
+@mixin transition($transition){
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+            transition: $transition;
+}
+
+// 伸缩盒定义
+@mixin flexbox(){
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// 伸缩盒定义
+@mixin flex($flex:1){
+    -webkit-box-flex: $flex;
+        -webkit-flex: $flex;
+                flex: $flex;
+}
+
+@mixin flexdirection($dir) {
+    -webkit-flex-direction: $dir;
+            flex-direction: $dir; 
+       -moz-flex-direction: $dir;
+         -o-flex-direction: $dir;
+        -webkit-box-orient: vertical; 
+}
+
+@mixin alignitems($align) {
+    -webkit-align-items: $align;
+            align-items: $align;  
+      -webkit-box-align: $align; 
+            
+}
+
+@mixin aligncontent($align) {
+    -webkit-align-content: $align;
+            align-content: $align;  
+}
+
+@mixin justifycontent($align) {
+    -webkit-justify-content: $align;
+            justify-content: $align; 
+           -webkit-box-pack: $align; 
+}
+
+@mixin spacebetween(){
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -moz-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+
+// 清除浮动方案
+@mixin clearfix(){
+    *zoom: 1;
+    &:after{
+        display: block;
+        overflow: hidden;
+        clear: both;
+        height: 0;
+        content: '\0020';
+    }
+}
+
+// 不透明度方案
+@mixin opacity($opacity){
+    filter: alpha(opacity=$opacity);
+    opacity: $opacity/100;
+}
+//圆角
+@mixin radius($rad) {
+    -moz-border-radius: $rad;
+    -webkit-border-radius: $rad;
+    border-radius: $rad;
+}
+
+@mixin boxsizing($bxs) {
+    box-sizing:$bxs;
+    -moz-box-sizing:$bxs;
+    -webkit-box-sizing:$bxs;
+}
+
+@mixin animation($ani) {
+    -webkit-animation: $ani;
+    -moz-animation: $ani;
+    -o-animation: $ani;
+    animation: $ani;
+}
+
+@mixin animationfillmode($ani) {
+    -webkit-animation: $ani;
+    -moz-animation-fill-mode: $ani;
+    -o-animation-fill-mode: $ani;
+    animation-fill-mode: $ani;
+}
+
+@mixin borderhalf() {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    bottom: 0;
+    left: -50%;
+    background: #ccc;
+    @include transform(scale(0.5));
+}
