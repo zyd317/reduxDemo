@@ -83,7 +83,7 @@
 - props: this.props.reducerName，reducer更新state之后
 - input等输入框加入value之后，输入被禁用。再绑定一个onchange事件来手动修改输入内容。
 - 生命周期
-    * **componentWillMout()** 组件挂载之前，render之前。
+    * **componentWillMount()** 组件挂载之前，render之前。
     使用setState不会导致页面重绘
     * **componentDidMount()** 组件挂载之后。
     适用：

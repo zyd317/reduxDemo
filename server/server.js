@@ -22,16 +22,19 @@ const compiler = webpack(webpackConfig);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
 
-const handleRender = (req, res) => {
+
+const handleRender = (req, res, next) => {
     const params = qs.parse(req.query);
     const counter = parseInt(params.counter, 10) || 0;
     const preLoadedState = { counter };
     const store = configureStore(preLoadedState);// 设置store的初始状态{counter: 0}
     const finalState = store.getState(); // store.getState()获得页面展示时store的状态，{counter: 0}
     res.send(renderFullPage("服务器已经把代码发送过来啦。。。", finalState));
+
+    // next(); // 已经send的res不能再进行next
 };
 
-app.use(handleRender);
+app.use('/page/', handleRender);
 
 // 渲染页面
 const renderFullPage = (html, preLoadedState) => {
@@ -67,3 +70,7 @@ app.listen(port, (error) => {
         console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
     }
 });
+
+// 路由
+let routes = require('./router');
+app.use('/', routes);
