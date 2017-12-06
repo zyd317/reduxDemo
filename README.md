@@ -118,6 +118,7 @@
 * reducer可以返回一个对象
     * components中使用this.props.actionName调用action
     * this.props.reducerName获取reducer的state（这个state是reducer里面的switch-case返回的值）
+* 添加ajax请求。一般在action里面发一个ajax请求，**返回数据之后dispatch相应的action** 。在reducer里面的操作都是同步的，发送ajax请求会导致还未收到相应就已经render了
 
 ## todos
 
