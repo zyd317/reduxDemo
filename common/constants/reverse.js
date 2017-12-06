@@ -3,3 +3,4 @@
  */
 export const REVERSE = 'REVERSE';
 export const GETINPUT = 'GETINPUT';
+export const SETXHR = 'SETXHR';

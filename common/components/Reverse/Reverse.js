@@ -13,7 +13,7 @@ import './index.scss';
 class Reverse extends Component {
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {} // 组件内部比较简单的状态使用state维护
     }
 
     // 修改input的内容,也可以使用下面的{reverseText: reverseText; inputText: inputText}
@@ -21,6 +21,28 @@ class Reverse extends Component {
     // componentWillReceiveProps(nextProps){
     //     this.refs.test.value = nextProps.reverseState;
     // }
+
+    /**
+     * 已进入页面请求数据，使用一个 setXHR 的action来改变props,并且reRender
+     * 同步操作
+     */
+    componentDidMount(){
+        let xml = new XMLHttpRequest();
+        xml.onreadystatechange = ()=>{
+            if (xml.readyState===4)
+            {
+                if (xml.status===200)
+                {
+                    this.props.setXHR({
+                        reverseText: xml.response,
+                        inputText: xml.response
+                    });
+                }
+            }
+        };
+        xml.open("GET", '/api/openAjax', true);
+        xml.send(null);
+    }
 
     render(){
         return (

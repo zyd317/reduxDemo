@@ -9,13 +9,11 @@ let express = require('express'),
 router.use('/api/:key', function (req, res, next) {
     let param = req.params;
     let str = JSON.stringify(param);
-    // res.set({
-    //     'Content-Type': 'application/json',
-    //     'Content-Length': str.length
-    // });
+    res.set({
+        'Content-Type': 'application/json',
+        'Content-Length': str.length
+    });
     res.send(str);
-    // res.jsonp(param);
-    // console.error(param);
 });
 
 module.exports = router;

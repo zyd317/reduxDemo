@@ -12,3 +12,8 @@ export const getInput = (value) => ({
     type: Types.GETINPUT,
     value: value
 });
+
+export const setXHR = (value) => ({
+    type: Types.SETXHR,
+    value: value
+});
