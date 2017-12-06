@@ -13,7 +13,25 @@ export const getInput = (value) => ({
     value: value
 });
 
-export const setXHR = (value) => ({
-    type: Types.SETXHR,
+export const setData = (value) => ({
+    type: Types.SETDATA,
     value: value
 });
+
+export const fetchXHR = () => (dispatch, getState) => {
+    let xml = new XMLHttpRequest();
+    xml.open("GET", '/api/openAjax', true);
+    xml.send(null);
+    xml.onreadystatechange = ()=>{
+        if (xml.readyState===4)
+        {
+            if (xml.status===200)
+            {
+                dispatch({
+                    type: Types.SETDATA,
+                    value: xml.response
+                });
+            }
+        }
+    };
+};
