@@ -106,6 +106,10 @@
         * 取消定时器
         * 取消网络请求
         * 解绑 DOM 事件
+        
+<div>
+    <img src="./componentsLife.png">
+</div>
 
 
 ## redux作为UI组件的事件管理
