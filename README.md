@@ -126,4 +126,5 @@
 - [x] 自动增加css前缀，minx/loaders自动添加
 - [x] 添加redux
 - [x] 增加ajax请求
+- [x] 添加生命周期
 - [ ] 添加router
