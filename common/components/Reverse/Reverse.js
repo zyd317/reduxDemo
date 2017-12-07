@@ -5,7 +5,7 @@
  *
  * this.props.actionName（this.props.getInput）可以调用对应的action.因为mapDispatchToProps，mapStateToProps可以把action dispatch 到引用组件的props上
  * this.props.reducerState（this.props.reverseState）可以得到该component的state
- * *因此，this.props.action/state可以调用action,也可以获取该组件的state*
+ * **因此，this.props.action/state可以调用action,也可以获取该组件的state**
  *
  * 学习组件生命周期
  */
