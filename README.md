@@ -82,7 +82,7 @@
 - components setState
 - props: this.props.reducerName，reducer更新state之后
 - input等输入框加入value之后，输入被禁用。再绑定一个onchange事件来手动修改输入内容。
-- 生命周期,如下图
+- 生命周期
     * **componentWillMount()** 组件挂载之前，render之前。
     使用setState不会导致页面重绘
     * **componentDidMount()** 组件挂载之后。
@@ -106,12 +106,11 @@
         * 取消定时器
         * 取消网络请求
         * 解绑 DOM 事件
-**react生命周期图示**
-<div>
+        
+**react生命周期图示**     
+<div style="margin: 0 auto;width: 600px;">
     <img src="./componentsLife.png">
 </div>
-
-<script>alert("dsds")</script>
 
 
 ## redux作为UI组件的事件管理
