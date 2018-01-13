@@ -15,7 +15,7 @@ import React from 'react'
 import configureStore from '../common/store/configureStore'
 
 const app = new Express();
-const port = 3002;
+const port = 3170;
 
 // 使用中间件来设置webpack模块热更新
 const compiler = webpack(webpackConfig);
