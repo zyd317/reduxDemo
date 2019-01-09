@@ -1,4 +1,4 @@
-##AMD, CMD, CommonJS和UMD等模块化区别
+## AMD, CMD, CommonJS和UMD等模块化区别
 >模块的设计思想最主要的有CommonJS(用于服务器) 和 AMD(用于浏览器)两种。
 >
 >之后ES6 在语言标准的层面上，也实现了模块功能，成为服务器和浏览器的通用解决方式。
@@ -18,7 +18,7 @@ let readfile = _fs.readfile;
 import { stat, exists, readFile } from 'fs';
 ```
 
-###usage
+### usage
 >export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
 ```
 export var firstName = 'Michael'; // 导出某个变量
