@@ -1,4 +1,4 @@
-## AMD, CMD, CommonJS和UMD等模块化区别
+## ES6模块化(export-import)编译时加载
 >模块的设计思想最主要的有CommonJS(用于服务器) 和 AMD(用于浏览器)两种。
 >
 >之后ES6 在语言标准的层面上，也实现了模块功能，成为服务器和浏览器的通用解决方式。
@@ -71,4 +71,32 @@ export default function () {
 
 import customName from './export-default';
 customName();
+```
+
+
+## NodeJS模块化-CommonJS(require-module.exports)运行时加载
+
+```
+// node
+module.exports = {
+  a : function() {},
+  b : 'xxx'
+};
+// AMD or CMD
+define(function(require, exports, module){
+  module.exports = {
+    a : function() {},
+    b : 'xxx'
+  };
+});
+
+
+// node
+var m = require('./a');
+m.a();
+// AMD or CMD
+define(function(require, exports, module){
+   var m = require('./a');
+   m.a();
+});
 ```
